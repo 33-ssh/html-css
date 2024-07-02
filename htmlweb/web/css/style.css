@@ -49,6 +49,27 @@ img {
 a {
     display: block;/* 將預設inline改為block */ 
     text-decoration: none;
+    color: #999;
+/*
+p{
+    font-size: .8rem;
+    line-height:1.2rem;
+ */
+}
+/* 共用區 */
+.btn-s{
+    background-color: white;
+    width:auto !important ; 
+    /*  */
+    height: 35px;
+    line-height: 30px;
+    padding:0 20px;
+    border-radius: 99px;
+    transition: .35s ease-in-out;
+}
+.btn-s:hover{
+    background-color: #999;
+    color:white;
 }
 
 /* 頁首區 */
@@ -107,9 +128,19 @@ a {
     display: flex;
     margin:15px 0; /* 控制父層外距 */
 }
+.navigation .menu li{
+    border-right: solid 1px #777;
+
+}
+.navigation .menu li:last-child{
+    border-right: none;
+
+}
 .navigation .menu a {
-    color: #999;
-    margin: 0 10px ; /* 控制子層的外距 */
+    
+    font-size: .9rem;
+    line-height: 1;
+    margin: 0 15px ; /* 控制子層的外距 */
     border-bottom: solid 2px transparent ; /* transparent =>透明 */
 }
 .navigation .menu a:hover {
