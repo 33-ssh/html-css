@@ -13,9 +13,10 @@
     <!-- 頁首區 -->
     <header id="topbar">
         <h1 class="logo">
-            <!-- <a href="./index.html"><img src="./images/logo_b.svg" alt="花園寶寶LOGO"></a> -->
-            <a href="/?hsLang=ja-jp" class="header__logo"></a>
-            <img src="https://moniclefinancial.co.jp/hubfs/raw_assets/public/corp_moniclefinancial/images/logo.svg" alt="Monicle Financial" class="logo">
+            <a href="./index.html"><img src="./images/logo_b.svg" alt="花園寶寶LOGO"></a>
+            <!--<a href="/?hsLang=ja-jp" class="header__logo"></a>
+            <img src="https://moniclefinancial.co.jp/hubfs/raw_assets/public/corp_moniclefinancial/images/logo.svg"
+                alt="Monicle Financial" class="logo">  -->
         </h1>
         <!-- 選單列 -->
         <nav class="navigation">
@@ -28,24 +29,46 @@
 
             </ul>
             <!-- main btn | ul.menu>li*6>a -->
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">VIDEO</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-
-
-
-            </nav>
-
+            <ul class="menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
+    <main>
+        <section id="contact">
+            <header class="title">
+                <h2>CONTACT</h2>
+                <h3>聯絡我們</h3>
+            </header>
+            <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單聯絡我們表單">
+                <label for="username">*姓名：</label>
+                <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete>
+                <!-- 當聯絡表單不是在最上面不可使用autofocus會直接-->
+                <label for="tel">聯絡電話:</label>
+                <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入聯絡電話" autocomplete>
 
+                <label for="email">*Email:</label>
+                <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required
+                    autocomplete>
 
+                <label for="message">*留言:</label>
+                <textarea name="message" id="message" title="留言欄位" rows="10" required placeholder="請輸入您的意見"></textarea>
+                <small>此表單為練習作品，不具有收集資料的功能。</small>
 
-
+                <!-- 表單按鈕一定要放在form裡面 -->
+                <!-- span不能刪，主要是動態不一樣 -->
+                <button name="btn__contact--submit" id="btn__contact--submit" title="送出按鈕">
+                    <span>送出</span>
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer></footer>
 </body>
 
 </html>
