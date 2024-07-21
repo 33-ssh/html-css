@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    background-image: url(./images/bg.jpg);
+    font-size: 16px;
+}
+
+img {
+    display: block;
+}
+
+/* iframe本質是行內元素 */
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+.box {
+    width: 1000px;
+    margin: 0 auto;
+    /* 間距(auto)自動偵測必須搭配寬度(width) */
+}
+
+.btn {
+    float: left;
+    /* 因block會自動補間距，所以用float浮動區塊，去覆蓋原來的block，寬高自動去抓內容尺寸 */
+}
+
+.col {
+    font-size: 14px;
+    float: left;
+    width: 432px;
+    /* 文字會自動延展，所以要自訂尺寸 */
+    border: dotted 2px #b1bf63;
+    margin: 30px 10px;
+    padding: 15px;
+}
+
+.col span {
+    /* <span> 主要用來修改樣式 */
+    color: rgb(195, 112, 28);
+}
+
+hr {
+    border: #b1bf63 1px solid;
+}
+
+address {
+    font-style: normal;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 150%;
+    /* 相等 font-size : 1.5em */
+}
+
+p {
+    font-size: 1em;
+    /* <p>預設 font-size : 1em */
+}
+
+.footer {
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: dotted 4px #b1bf63;
+    padding: 20px 0;
+}
