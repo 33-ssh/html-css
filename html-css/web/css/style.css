@@ -1,0 +1,628 @@
+@charset "UTF-8";
+/*UTF-8一定要在行數1*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* 複製import上下會有 */
+/* google font一定要在第二行 */
+@font-face {
+    font-family: JosefinSans-VariableFont_wght;
+    src: url(../webfonts/JosefinSans-VariableFont_wght.ttf);
+}
+
+/* 重置所有標籤的樣式 */
+
+:root{
+    /* --一定要打 */
+    /* 灰階 */
+    --deep:#444444;
+    --grey:#999999;
+    --light:#f3eaea;
+
+    /* 背景 */
+    --primary:#f2edf0;
+    --secondary:#e6ece5;
+    --tertiary:#ecf0f4;
+    
+    /*輔助*/
+    --lesser-1:#f3e4e4;
+    --lesser-2:#efdbdb;
+    --lesser-3:#cdaaab;
+    --lesser-4:#a97f81;
+    --lesser-5:#8f6b6d;
+
+    /*透明*/
+    --alpha-w-60:rgba(255,255,255,.6);
+    --alpha-b-20:rgba(0, 0, 0, .20);
+    --alpha-b-40:rgba(0,0,0,.40);
+    --alpha-r-20:rgba(220,185,185,0.2);
+    --alpha-r-60:rgba(220,185,185,0.6);
+
+    /* 漸層 */
+    --gradien-w-a: rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8);
+
+    /* 陰影 */
+    --box-shadow-g: 2px 2px 3px #rgba(0,0,0,.15),
+    inset -1px -1px #rgba(255,255,255,.8)
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加內距padding與邊框border */
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font: size 100%;
+    line-height: 1.5;
+    background-color: rgb(255, 255, 255);
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    display: block;
+    /* 將預設inline改為block */
+    text-decoration: none;
+    color: var(--deep);
+}
+
+p {
+    font-size: .8rem;
+    line-height: 1.2rem;
+}
+
+/* .為class */
+/* 共用區 */
+
+
+.btn-s {
+    background-color: white;
+    color:var(--deep);
+    width: auto !important;
+    height: 35px;
+    line-height: 30px;
+    padding: 0 20px;
+    border-radius: 99px;
+    transition: .35s ease-in-out;
+}
+
+.btn-s:hover {
+    background-color:var(--deep);
+    color: var(--light);
+}
+
+
+/* 頁首區 */
+#topbar {
+    /* position 權重大於 display */
+    position: fixed;
+    z-index: 999;
+    /* 固定定位:會跟著捲軸走 */
+    width: 100%;
+    /* 定位會變成抓內容的尺寸，所以要手動設定回w100% */
+
+    display: flex;
+    /* 預設主軸為水平 */
+    justify-content: space-between;
+    /* 主軸(水平)均分貼齊頭尾 */
+    align-items: center;
+    /* 副軸(垂直)置中 */
+    padding: 30px;
+
+}
+
+.logo {
+    width: 65px;
+    /* 相對於父元素 */
+}
+
+.logo img {
+    filter: drop-shadow(2px 2px var(--alpha-w-60));
+}
+
+#topbar .navigation {
+    display: flex;
+    flex-direction: column;
+    /* 主軸(垂直) */
+    align-items: flex-end;
+    /* 副軸(水平)置底 */
+}
+
+.navigation .icon {
+    display: flex;
+}
+
+.navigation .icon li a {
+    /* display: border; */
+    width: 35px;
+    height: 35px;
+    /* border: solid 1px;*/
+    /*框框 */
+    margin-left: 10px;
+    transition: all .35s ease-in-out;
+}
+
+.navigation .icon .icon-fb {
+    /* 只有svg圖會自動等比例縮放，其他圖檔會保持原始尺寸 */
+    background-image: url(../images/icon-fb.svg);
+    /* 假設為png檔，要再打 */
+}
+
+.navigation .icon .icon-fb:hover {
+    background-image: url(../images/icon-fb-hover.svg)
+}
+
+.navigation .icon .icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.navigation .icon .icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.navigation .icon .icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.navigation .icon .icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+.navigation .menu {
+    display: flex;
+    margin: 15px 0;
+    /* 控制父層外距 */
+    padding: 20px;
+    border-radius: 99px;
+}
+
+.navigation .menu li {
+    border-right: solid 1px var(--deep);
+
+}
+
+.navigation .menu li:last-child {
+    border-right: none;
+
+}
+
+.navigation .menu a {
+
+    font-size: .9rem;
+    line-height: 1;
+    margin: 0 15px;
+    /* 控制子層的外距 */
+    border-bottom: solid 2px transparent;
+    /* transparent =>透明 */
+}
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px var(--deep);
+    transition: .35s ease-in-out;
+}
+
+/* 主要內容共用區 */
+/* font-face基本上放上面 */
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* 高度都是vh */
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    /* 因為父層會延展 */
+    align-items: center;
+}
+
+.title h2 {
+    font-family: JosefinSans-VariableFont_wght, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    border-bottom: 2px solid #050505;
+    margin-bottom: 5px;
+    line-height: 3rem;
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    line-height: 2.5rem;
+}
+
+.box__list {
+    width: 80%;
+    max-width: 1400px;
+    /* 通常是搭配相對單位，設定絕對單位 */
+    display: flex;
+
+}
+
+.box__list .item {
+    flex: 1;
+    margin: 0 15px;
+    box-shadow: 3px 3px 8px var(--alpha-b-20);
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.box__list figure {
+    height: 35vh;
+
+}
+
+.box__list img {
+    object-fit: cover;
+    /* width: 100%;  共用區已設定 */
+    height: 100%;
+
+}
+
+.box__list .content {
+    padding: 15px 20px;
+
+}
+
+.box__list h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.box__list p {
+    font-size: .9rem;
+    text-align: justify;
+    /* 齊行，英文是單字間距均分，建議中文使用 */
+
+
+}
+
+/* 最新消息區 */
+#news {
+    background-color: var(--primary);
+}
+#news .content {
+    background-color: var(--alpha-w-60);
+    transition: .4s;
+}
+
+#news .content:hover {
+    background-color: var(--light);
+}
+#news p {
+
+    /* 原先在.box__list p */
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 文字溢出時出現省略號，若有設定line-clamp時，瀏覽器會自動加入 */
+    display: -webkit-box;
+    /* 彈性佈局 */
+    -webkit-box-orient: vertical;
+    /* 定義box垂直佈局 */
+    -webkit-line-clamp: 5;
+    /* 限制行數 */
+}
+
+/* 項目服務區 */
+#service {
+    background-color: var(--secondary);
+}
+#service p {
+    
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+#service .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}
+#service a {
+    width: 100%; /* 被父元素的dispaly若為row，則寬度抓內容尺寸，所以要手動寫回來 */
+    color: var(--light);
+    background-color: var(--alpha-b-40);
+    transition:.4s;
+}
+
+#service  .content:hover {
+    background-color: var(--deep);
+}
+
+.scv-1 {
+    background-image: url(../images/pt_svc1.jpg);
+}
+
+.scv-2 {
+    background-image: url(../images/pt_svc2.jpg);
+}
+
+.scv-3 {
+    background-image: url(../images/pt_svc3.jpg);
+}
+
+.scv-4 {
+    background-image: url(../images/pt_svc4.jpg);
+}
+
+
+/* 相關影片區 */
+#video {
+    background-color: var(--tertiary);
+}
+.video {
+    width:50%;
+    max: width 1050px;
+}
+video {
+    width:100%
+}
+/* 關於我們區 */
+
+#about .content {
+    width: 65%;
+    height:100%; /* 高度 %,是抓父元素相對高度*/
+    background-color: var(--alpha-r-60);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about p {
+    width: 85%;
+    height:65vh;
+    overflow: auto;
+}
+
+/* 聯絡我們區 */
+#contact {
+    position: relative;
+    /* 專門作為absolute的定位依據 */
+    /* 不能使用sticky */
+    overflow: clip;
+    /* 被剪裁 */
+    /* 背景影像基本設定 */
+    background-image: url(../images/bg_contact.jpg);
+    /* 自動剪裁 */
+    background-size: cover;
+    /* x,y軸 上面為完整寫法，可以只寫center */
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* 固定背景 */
+    background-attachment: fixed;
+}
+
+
+/* 裝飾花 */
+.flower_r {
+    position: absolute;
+    /* 絕對定位 */
+    left: -50px;
+    bottom: -15px;
+    width: 300px;
+    transform: rotate(30deg);
+    /* 旋轉 */
+}
+
+.flower_w {
+    position: absolute;
+    /* 絕對定位 */
+    right: -50px;
+    top: 50px;
+    width: 300px;
+    transform: rotate(-50deg);
+}
+
+
+
+
+#form--contact {
+    font-family: 'Noto Sans TC', sans-serif;
+    /* 要共用 */
+    display: flex;
+    flex-direction: column;
+    /* 主軸(垂直) */
+    align-items: center;
+    /* 副軸(水平)置中 */
+    width: 35%;
+
+}
+
+#form--contact label {
+    font-size: .85rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+
+}
+
+
+
+#form--contact input,
+#form--contact textarea {
+    width: 100%;
+    border-radius: 10px;
+    /* 原本在玻璃擬態區因不共用才移下來 */
+    padding: 10px;
+    color: #936c6e;
+    /* font-family: 'Noto Sans TC', sans-serif; */
+    font-weight: 600;
+    /* border-radius:5px ; */
+    /* 會變粗下次給 */
+
+    /* 取消表單元件的預設值 */
+    /* 原本在玻璃擬態區因不共用才移下來 */
+    background-color: transparent;
+    border: none
+}
+
+/* 偽類別控制狀態 */
+#form--contact input:focus,
+#form--contact textarea:focus {
+    /* 修改預設樣式 */
+    outline: 1px solid  var(--lesser-4);
+        /* outline none不會有外邊框 */
+
+}
+
+
+
+/* 偽元素有內容去改變樣式 */
+#form--contact input::placeholder,
+#form--contact textarea::placeholder {
+    font-size: .8rem;
+    font-weight: 400;
+    color:var(--lesser-4);
+}
+
+#form--contact small {
+    font-size: .8rem;
+    color: #825353;
+    padding: 15px 5px;
+}
+
+
+/* 玻璃擬態效果 */
+#form--contact input,
+#form--contact textarea,
+#topbar .menu,
+#btn__contact--submit {
+
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
+    box-shadow: 2px 2px 3px var(--gradien-w-a);
+    /* filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .6)); */
+    backdrop-filter: blur(4px);
+    /* 模糊 */
+    background-color: rgba(220, 255, 255, 0.2);
+}
+
+
+/* 動態按鈕 */
+#btn__contact--submit {
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; 取消文字裝飾底線 */
+    border-radius: 50px;
+    /* 定義起始位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 指標樣式 */
+    cursor: pointer;
+    /*指標樣式:手型  */
+    /* text-transform: uppercase; 設定字母大寫 */
+    height: 60px;
+    width: 210px;
+    /* opacity: 1; 透明度 */
+    /* 取消button預設值 */
+    border: 1px solid #b58a8a;
+}
+
+#btn__contact--submit span {
+    color: #b58a8a;
+    font-size: 12.8px;
+    /* .8rem*/
+    font-weight: 500;
+    letter-spacing: 1rem;
+    /* 字母的間距，每個字母左邊+字距 */
+    padding-left: 1.2rem;
+    /* 區塊置中時，因為字距會不對齊，而補回字距的間距 */
+}
+
+#btn__contact--submit:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+#btn__contact--submit:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
