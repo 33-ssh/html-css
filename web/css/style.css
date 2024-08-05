@@ -11,45 +11,88 @@
 
 /* 重置所有標籤的樣式 */
 
-:root{
+:root {
     /* --一定要打 */
     /* 灰階 */
-    --deep:#444444;
-    --grey:#999999;
-    --light:#f3eaea;
+    --deep: #444444;
+    --grey: #999999;
+    --light: #f3eaea;
 
     /* 背景 */
-    --primary:#f2edf0;
-    --secondary:#e6ece5;
-    --tertiary:#ecf0f4;
-    
+    --primary: #f2edf0;
+    --secondary: #e6ece5;
+    --tertiary: #ecf0f4;
+
     /*輔助*/
-    --lesser-1:#f3e4e4;
-    --lesser-2:#efdbdb;
-    --lesser-3:#cdaaab;
-    --lesser-4:#a97f81;
-    --lesser-5:#8f6b6d;
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #a97f81;
+    --lesser-5: #8f6b6d;
 
     /*透明*/
-    --alpha-w-60:rgba(255,255,255,.6);
-    --alpha-b-20:rgba(0, 0, 0, .20);
-    --alpha-b-40:rgba(0,0,0,.40);
-    --alpha-r-20:rgba(220,185,185,0.2);
-    --alpha-r-60:rgba(220,185,185,0.6);
+    --alpha-w-60: rgba(255, 255, 255, .6);
+    --alpha-b-20: rgba(0, 0, 0, .20);
+    --alpha-b-40: rgba(0, 0, 0, .40);
+    --alpha-r-20: rgba(220, 185, 185, 0.2);
+    --alpha-r-60: rgba(220, 185, 185, 0.6);
 
     /* 漸層 */
     --gradien-w-a: rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8);
 
     /* 陰影 */
-    --box-shadow-g: 2px 2px 3px #rgba(0,0,0,.15),
-    inset -1px -1px #rgba(255,255,255,.8)
+    --box-shadow-g: 2px 2px 3px #rgba(0, 0, 0, .15),
+        inset -1px -1px #rgba(255, 255, 255, .8);
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     /* 不累加內距padding與邊框border */
 }
+
+/* 捲軸樣式 */
+::-webkit-scrollbar {
+    /* 滾動條/捲軸基底 */
+    width: 15px;
+    height: 15px;
+    background-color: var(--lesser-1);
+}
+
+::-webkit-scrollbar-button {
+    /* 捲軸上的按鈕(向上向下的箭頭) */
+    background-color: var(--lesser-5);
+    height: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    /* 可拖曳的滾動手柄 */
+    background-color: var(--lesser-3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* 可拖曳的滾動手柄 */
+    background-color: var(--lesser-4);
+}
+
+::-webkit-scrollbar-track {
+    /* 滾動條的軌道 */
+    box-shadow: inset 0 0 6px var(--alpha-b-20);
+    /* inset將陰影放在裡面 */
+}
+
+::-webkit-scrollbar-corner {
+    /* 交界的底角 */
+    background-color: var(--lesser-4);
+}
+
+::-webkit-resizer {
+    /* 多行文字欄位右下角的縮放按鈕 */
+    background-color: var(--alpha-b-20);
+}
+
 
 /* 重置字體 */
 body {
@@ -106,7 +149,7 @@ p {
 
 .btn-s {
     background-color: white;
-    color:var(--deep);
+    color: var(--deep);
     width: auto !important;
     height: 35px;
     line-height: 30px;
@@ -116,7 +159,7 @@ p {
 }
 
 .btn-s:hover {
-    background-color:var(--deep);
+    background-color: var(--deep);
     color: var(--light);
 }
 
@@ -246,7 +289,7 @@ section {
     display: flex;
     flex-direction: column;
     /* 因為父層會延展 */
-    align-items: center; 
+    align-items: center;
 }
 
 .title h2 {
@@ -318,6 +361,7 @@ section {
 #news {
     background-color: var(--primary);
 }
+
 #news .content {
     background-color: var(--alpha-w-60);
     transition: .4s;
@@ -326,6 +370,7 @@ section {
 #news .content:hover {
     background-color: var(--light);
 }
+
 #news p {
 
     /* 原先在.box__list p */
@@ -345,8 +390,9 @@ section {
 #service {
     background-color: var(--secondary);
 }
+
 #service p {
-    
+
     /* 單行省略 */
     overflow: hidden;
     text-overflow: ellipsis;
@@ -362,14 +408,16 @@ section {
     background-position: center;
     background-size: cover;
 }
+
 #service a {
-    width: 100%; /* 被父元素的dispaly若為row，則寬度抓內容尺寸，所以要手動寫回來 */
+    width: 100%;
+    /* 被父元素的dispaly若為row，則寬度抓內容尺寸，所以要手動寫回來 */
     color: var(--light);
     background-color: var(--alpha-b-40);
-    transition:.4s;
+    transition: .4s;
 }
 
-#service  .content:hover {
+#service .content:hover {
     background-color: var(--deep);
 }
 
@@ -394,29 +442,78 @@ section {
 #video {
     background-color: var(--tertiary);
 }
+
 .video {
-    width:50%;
+    width: 50%;
     max: width 1050px;
 }
+
 video {
-    width:100%
+    width: 100%;
 }
+
 /* 關於我們區 */
+#about {
+    position: relative;
+    background-color: var(--lesser-3);
+}
 
 #about .content {
+    position: absolute;
+    z-index: 1;
     width: 65%;
-    height:100%; /* 高度 %,是抓父元素相對高度*/
+    /* top: 0; */
+    height: 100%;
+    /* 高度 %,是抓父元素相對高度*/
     background-color: var(--alpha-r-60);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    backdrop-filter: blur(5px);
 }
 
 #about p {
     width: 85%;
-    height:65vh;
-    overflow: auto;
+    height: 65vh;
+    padding-right: 1rem;
+    /* overflow: auto; */
+    overflow: scroll;
+    /* 建議使用auto，目前使用scroll是因為要練習捲軸變色 */
+}
+
+#about video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay; /* 混合模式 */
+    filter: brightness(120%) contrast(50%);
+}
+
+/* 區塊捲軸 */
+#about p::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+#about p::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    border: 1px solid var(--lesser-4);
+}
+
+#about p::-webkit-scrollbar-track {
+    border-radius: 99px;
+    border: 1px solid var(--lesser-4);
+}
+
+#about p::-webkit-scrollbar-button {
+    display: none;
+    /* 預設就是display:none;是因為body有設定button，所以需要另外設定取消 */
+}
+
+#about p::-webkit-scrollbar-corner {
+    border-radius: 50%;
 }
 
 /* 聯絡我們區 */
@@ -505,8 +602,8 @@ video {
 #form--contact input:focus,
 #form--contact textarea:focus {
     /* 修改預設樣式 */
-    outline: 1px solid  var(--lesser-4);
-        /* outline none不會有外邊框 */
+    outline: 1px solid var(--lesser-4);
+    /* outline none不會有外邊框 */
 
 }
 
@@ -517,7 +614,7 @@ video {
 #form--contact textarea::placeholder {
     font-size: .8rem;
     font-weight: 400;
-    color:var(--lesser-4);
+    color: var(--lesser-4);
 }
 
 #form--contact small {
