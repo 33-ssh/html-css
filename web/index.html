@@ -10,37 +10,52 @@
     <link rel="stylesheet" href="./css/carousel.css">
     <!-- 自訂的css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- <script>
+        window.onload = function () {
+            document.getElementById("demo").innerHTML = "Hello JavaScript";
+        }
+    </script> -->
 </head>
 
 <body>
     <!-- 頁首區 -->
     <header id="topbar">
+        <!-- logo區 -->
         <h1 class="logo">
             <a href="./index.html"><img src="./images/logo_b.svg" alt="花園寶寶LOGO"></a>
             <!--<a href="/?hsLang=ja-jp" class="header__logo"></a>
             <img src="https://moniclefinancial.co.jp/hubfs/raw_assets/public/corp_moniclefinancial/images/logo.svg"
                 alt="Monicle Financial" class="logo">  -->
         </h1>
-        <!-- 選單列 -->
-        <nav class="navigation">
-            <!-- icon btn |ul.icon>li*4>a -->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-                <li><a class="btn-s" href="./login.html">Login</a></li>
+        <div class="navbar">
+            <!-- 三條線的漢堡按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
 
-            </ul>
-            <!-- main btn | ul.menu>li*6>a -->
-            <ul class="menu">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">VIDEO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+            <!-- 選單列 -->
+            <nav class="navigation">
+                <!-- icon btn |ul.icon>li*4>a -->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                    <li><a class="btn-s" href="./login.html">Login</a></li>
+
+                </ul>
+                <!-- main btn | ul.menu>li*6>a -->
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <!-- 換圖輪播區-->
@@ -60,8 +75,8 @@
                         <div class="banner-inner-wrapper">
                             <h2>Creative Template</h2>
                             <h1>Welcome<br>to MoGo</h1>
-                            <div class="line"></div>
-                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                            <!-- <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div> -->
                         </div>
                     </div>
                     <!-- 第二張 -->
@@ -120,106 +135,108 @@
 
 
 
-            <!-- 輪播張數提示器 -->
-            <nav>
-                <div class="controls">
-                    <label for="banner1">
-                        <!-- 進度條 -->
-                        <span class="progressbar">
-                            <span class="progressbar-fill"></span>
-                        </span>
-                        <!-- 文字區 -->
-                        <!--可刪除 <span>01</span> Intro -->
-                    </label>
-                    <label for="banner2">
-                        <span class="progressbar">
-                            <span class="progressbar-fill"></span>
-                        </span>
-                        <!-- <span>02</span> Work -->
-                    </label>
-                    <label for="banner3">
-                        <span class="progressbar">
-                            <span class="progressbar-fill"></span>
-                        </span>
-                        <!-- <span>03</span> About -->
-                    </label>
+                <!-- 輪播張數提示器 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1">
+                            <!-- 進度條 -->
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- 文字區 -->
+                            <!--可刪除 <span>01</span> Intro -->
+                        </label>
+                        <label for="banner2">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>02</span> Work -->
+                        </label>
+                        <label for="banner3">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>03</span> About -->
+                        </label>
 
 
 
 
 
-                    <label for="banner4">
-                        <span class="progressbar">
-                            <span class="progressbar-fill"></span>
-                        </span>
-                        <!-- <span>04</span> Contacts -->
-                    </label>
+                        <label for="banner4">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>04</span> Contacts -->
+                        </label>
 
 
-                    <label for="banner5">
-                        <span class="progressbar">
-                            <span class="progressbar-fill"></span>
-                        </span>
-                        <!-- <span>05</span> Contacts -->
-                    </label>
+                        <label for="banner5">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>05</span> Contacts -->
+                        </label>
 
 
 
 
 
-                </div>
-            </nav>
-        </div>
+                    </div>
+                </nav>
+            </div>
         </section>
         <!-- 最新消息區 -->
         <section id="news">
             <header class="title">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
-
-                <!-- div class box __list*3 -->
-                <div class="box__list">
-                    <article class="item">
-                        <!-- a>(figure>img)+div.content>h1+p -->
-                        <a href="#">
-                            <!-- 圖片 -->
-                            <figure><img src="./images/pt_news1.jpg" alt=""></figure>
-                            <!-- 內容 -->
-                            <div class="content">
-                                <h1>NEWS TITLE</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit
-                                    dolores eaque
-                                    doloremque asperiores tempore sequi voluptatem, quaerat mollitia, possimus nam rem
-                                    dignissimos at quis assumenda dolor quibusdam tenetur? Numquam.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="item">
-                        <a href="#">
-                            <figure><img src="./images/pt_news2.jpg" alt=""></figure>
-                            <div class="content">
-                                <h1>NEWS TITLE</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit
-                                    dolores eaque
-                                    doloremque asperiores tempore sequi voluptatem, quaerat mollitia, possimus nam rem
-                                    dignissimos at quis assumenda dolor quibusdam tenetur? Numquam.</p>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="item">
-                        <a href="#">
-                            <figure><img src="./images/pt_news3.jpg" alt=""></figure>
-                            <div class="content">
-                                <h1>NEWS TITLE</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit
-                                    dolores eaque
-                                    doloremque asperiores tempore sequi voluptatem, quaerat mollitia, possimus nam rem
-                                    dignissimos at quis assumenda dolor quibusdam tenetur? Numquam.</p>
-                            </div>
-                        </a>
-                    </article>
-                </div>
             </header>
+            <!-- 列表區 -->
+
+            <!-- div class box __list*3 -->
+            <div class="box__list">
+                <article class="item">
+                    <!-- a>(figure>img)+div.content>h1+p -->
+                    <a href="#">
+                        <!-- 圖片 -->
+                        <figure><img src="./images/pt_news1.jpg" alt=""></figure>
+                        <!-- 內容 -->
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit
+                                dolores eaque
+                                doloremque asperiores tempore sequi voluptatem, quaerat mollitia, possimus nam rem
+                                dignissimos at quis assumenda dolor quibusdam tenetur? Numquam.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news2.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit
+                                dolores eaque
+                                doloremque asperiores tempore sequi voluptatem, quaerat mollitia, possimus nam rem
+                                dignissimos at quis assumenda dolor quibusdam tenetur? Numquam.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news3.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit
+                                dolores eaque
+                                doloremque asperiores tempore sequi voluptatem, quaerat mollitia, possimus nam rem
+                                dignissimos at quis assumenda dolor quibusdam tenetur? Numquam.</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            <a class="btn-s" href="#">more</a> <!-- 新增 -->
         </section>
         <!-- 服務項目區 -->
         <section id="service">
@@ -264,6 +281,7 @@
                     </a>
                 </li>
             </ul>
+            <a class="btn-s" href="#">more</a> <!-- 新增 -->
         </section>
         <section id="video">
             <header class="title">
@@ -403,7 +421,61 @@
             <div class="flower_w"><img src="./images/flower_w.png" alt="裝飾白花"></div>
         </section>
     </main>
-    <footer></footer>
+    <!-- 頁尾區 -->
+    <footer>
+        <div>
+            <!-- logo -->
+            <h1 class="logo"><a href="index.html"><img src="./images/logo_b.svg" alt=""></a></h1>
+            <!-- 主選單 -->
+            <nav class="navigation">
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li>
+                        <!-- 主按鈕 -->
+                        <a href="#">NEWS</a>
+                        <!-- 子選單 -->
+                        <!-- ul>li*2>a -->
+                        <ul class="submenu">
+                            <li><a href="#">媒體報導</a></li>
+                            <li><a href="#">活動訊息</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <!-- 主按鈕 -->
+                        <a href="#">SERVICE</a>
+                        <!-- 子選單 -->
+                        <ul class="submenu">
+                            <li><a href="#">服務一</a></li>
+                            <li><a href="#">服務二</a></li>
+                            <li><a href="#">服務三</a></li>
+                            <li><a href="#">服務四</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">VIDEO</a></li>
+                    <li>
+                        <!-- 主按鈕 -->
+                        <a href="#">ABOUT</a>
+                        <!-- 子選單 -->
+                        <ul class="submenu">
+                            <li><a href="#">總經理的話</a></li>
+                            <li><a href="#">公司歷史</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <!-- 主選單 -->
+                        <a href="#">CONTACT</a>
+                        <!-- 子按鈕 -->
+                        <ul class="submenu">
+                            <li><a href="#">聯絡方式</a></li>
+                            <li><a href="#">交通歷史</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <small>copyright &copy; 花園寶寶.</small>
+    </footer>
     <!--先載入套件給的jquery原始碼，讓瀏覽器看懂 -->
     <!-- jQuery原始碼，只能選一個版本套用，不可重複使用 -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
@@ -412,6 +484,13 @@
     <!-- 此段原先在"https://code.jquery.com/jquery-3.7.1.slim.js"的後面 integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous" -->
     <!-- 換圖輪播JS，因為是寫jquery，所以一定先執行jquery原始檔，要放在它下面 -->
     <script src="./js/carousel.js"></script>
+
+    <!-- 自訂的JS，一定要寫在最下面，要在最後執行-->
+    <script src="./js/script.js"></script>
+
+    <!-- <script>
+            document.getElementById("demo").innerHTML = "Hello JavaScript";
+    </script> -->
 </body>
 
 </html>
