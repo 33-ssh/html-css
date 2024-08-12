@@ -166,6 +166,36 @@ p {
     color: var(--light);
 }
 
+#gotop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+
+    width: 50px;
+    height: 50px;
+    background-color: var(--lesser-5);
+    border-radius: 50%;
+    padding: 5px;
+
+    cursor: pointer; /* 游標樣式:手指 */
+}
+
+/* 玻璃擬態效果 */
+#form--contact input,
+#form--contact textarea,
+#topbar .menu,
+#btn__contact--submit {
+
+    background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
+    box-shadow: 2px 2px 3px var(--gradien-w-a);
+    /* filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .6)); */
+    backdrop-filter: blur(5px);
+    /* 模糊 */
+    background-color: rgba(220, 255, 255, 0.2);
+}
+
+
 
 /* 頁首區 */
 #topbar {
@@ -219,6 +249,8 @@ p {
     height: 3px;
     background-color: var(--deep);
     margin: 5px auto;
+    transition: 0.35s;
+    /* 增加 */
 }
 
 
@@ -282,7 +314,7 @@ p {
 
 
 .navigation .menu li {
-    border-left: solid 1px var(--deep);
+    /* border-left: solid 1px var(--deep); */
 
 }
 
@@ -294,17 +326,94 @@ p {
 }
 
 @media(max-width:640px) {
-    .navigation .menu {
-        flex-direction: column;
-        border-radius: 15px;
+    #topbar {
+        align-items: flex-start;
     }
+
+    /* 三變成X */
+    .hamburger.is-active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(11px);
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-11px);
+        ;
+    }
+
+    .navigation {
+        align-items: center;
+        /* 副軸(水平)置中 */
+        padding: 10px;
+        border-radius: 15px;
+
+        /* 玻璃擬態效果 */
+        background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
+        box-shadow: var(--gradien-w-a);
+        backdrop-filter: blur(5px);
+        /* 模糊 */
+        background-color: rgba(220, 255, 255, 0.2);
+        /* 動畫效果 */
+        animation: hide .35s both;
+    }
+
+    .navigation.show {
+        display: flex;
+        /* 動畫效果 */
+        animation: show .35s both;
+    }
+
+    @keyframes hide {
+        from {
+            opacity: 1; display: flex;
+        }
+
+        to {
+            opacity: 0; display: none;
+        }
+
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+
+    }
+
+    #topbar .menu {
+        text-align: center;
+        flex-direction: column;
+        order: -1;
+        background-image: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        background-color: transparent;
+    }
+
+    /* .navigation .menu { */
+    /* flex-direction: column; */
+
+    /* border-radius: 15px; */
+    /* }  */
+
     .navigation .menu li {
         border: none;
     }
+
     .navigation .menu a {
-        margin: 15px ;
+
+        margin: 15px 15px;
     }
 }
+
 .navigation .menu li:last-child {
     border-right: none;
 
@@ -314,7 +423,7 @@ p {
 
     font-size: .9rem;
     line-height: 1;
-    margin: 0 15px;
+    margin: 15px;
     /* 控制子層的外距 */
     border-bottom: solid 2px transparent;
     /* transparent =>透明 */
@@ -752,19 +861,6 @@ video {
 }
 
 
-/* 玻璃擬態效果 */
-#form--contact input,
-#form--contact textarea,
-#topbar .menu,
-#btn__contact--submit {
-
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
-    box-shadow: 2px 2px 3px var(--gradien-w-a);
-    /* filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, .6)); */
-    backdrop-filter: blur(4px);
-    /* 模糊 */
-    background-color: rgba(220, 255, 255, 0.2);
-}
 
 
 /* 動態按鈕 */
@@ -855,6 +951,7 @@ video {
 /* 頁尾區 */
 footer {
     padding: 20px;
+    background-color:var(--lesser-1)
 }
 
 footer div {
